@@ -17,15 +17,14 @@ public class DADOSFUNCIONARIOS {
 		System.out.println("INFORME O SALARIO DO FUNCIONARIO:");
 		informacao.salario = sc.nextDouble();
 		System.out.println("");
-		System.out.printf("Funcionario: " + informacao.nome.toUpperCase() + " R$%.2f", informacao.salarioLiquido());
+		System.out.printf("Funcionario: " + informacao.nome.toUpperCase() + " "+  String.format("R$%.2f ", informacao.salarioLiquido()));
 		System.out.println("");
 		System.out.println("Com  porcentagem de acrescimo no salario:");
-		double taxaPorcen = 0.00;
-		taxaPorcen = sc.nextDouble();
-		
-		System.out.printf("Dados atualizados " + informacao.nome.toLowerCase() 
-				+ String.format(" %.2f",informacao.salarioLiquido()+informacao.salario*(taxaPorcen/100)));
+		 double taxa = sc.nextDouble();
+		informacao.acrecimosTaxa(taxa);
 
+		//System.out.printf("Dados atualizados " + informacao.nome.toLowerCase() + String.format("R$ %.2f",informacao));
+		System.out.println(informacao );
 		sc.close();
 
 	}

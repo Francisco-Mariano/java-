@@ -1,18 +1,21 @@
 package UteisInformacao;
 
-public class INFORMACAO{
+public class INFORMACAO {
 
 	public String nome;
 	public double salario;
-	public double taxa = 1000;
-		
-	public double  salarioLiquido() {
-		
-		return salario - taxa;
+	public double tributosSalarios= 1000;
+	public double taxa = 0;
+
+	public double salarioLiquido() {
+		return salario - tributosSalarios;
 	}
-	
-//public doubele incremento(salario) {
-//		this.salario=salario -taxaporcen;
-//	}
-	
+
+	public void acrecimosTaxa(double taxa) {
+		this.taxa = taxa ;
+	}
+
+	public String toString() {
+		return nome + " R$ " + String.format("%.2f", (salarioLiquido() + salario * (taxa / 100)));
+	}
 }
