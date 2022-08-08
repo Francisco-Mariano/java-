@@ -12,7 +12,7 @@ public class Programa {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-//		Produto produto = new Produto();
+     	Produto p = new Produto();
 		System.out.println("Entre com os dados do produto:");
 		System.out.print("Entre com o nome do produto: ");
 		String nome = sc.nextLine();
@@ -21,6 +21,9 @@ public class Programa {
 		System.out.print("Entre com a quantidade no estoque: ");
 		int quantidade = sc.nextInt();
 		Produto produto = new Produto(nome, preco);
+		
+		produto.setNome("Computador");
+		System.out.println("O NOME DO PRODUTO É "+ produto.getNome());
 		System.out.printf("\nDados do Produto: " + produto.toString().toUpperCase() + "!!!");
 
 		System.out.println();
